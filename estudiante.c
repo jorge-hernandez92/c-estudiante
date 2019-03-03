@@ -50,6 +50,24 @@ int main( ) {
     }
 
 
+
+    // variable para posision del promedio mas alto
+    int posicionDelMasAlto = 0;
+    for (int k = 0; k< numeroEstudiante; ++k) {
+        if(estudianteArreglo[posicionDelMasAlto].promedio<estudianteArreglo[k].promedio) {
+            posicionDelMasAlto = k;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
     for (int j = 0; j < numeroEstudiante ; j++) {
         printf("\n");
         printf( "nombre  : %s\n", estudianteArreglo[j].nombre);
@@ -60,6 +78,12 @@ int main( ) {
         }
         printf("PROMEDIO : %i\n", estudianteArreglo[j].promedio);
     }
+    printf("ALUMNOS DEL PROMEMDIO MAS ALTO:\n");
+
+    printf("Nombre: %s\n",estudianteArreglo[posicionDelMasAlto].nombre);
+    printf("Edad: %i\n",estudianteArreglo[posicionDelMasAlto].edad);
+    printf("Genero: %s\n",estudianteArreglo[posicionDelMasAlto].genero);
+    printf("promedio: %i", estudianteArreglo[posicionDelMasAlto].promedio);
 
 
     return 0;
