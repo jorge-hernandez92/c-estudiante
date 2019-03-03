@@ -2,13 +2,18 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MAX_CALIFICACIONES 5
+
+void limpia(){
+    while ((getchar()) != '\n' ) { }
+}
 
 
 struct Estudiante {
     char  nombre[50];
     int   edad;
     char  genero[20];
-    int   calificaciones[5];
+    int   calificaciones[MAX_CALIFICACIONES];
 };
 
 
@@ -21,7 +26,7 @@ int main( ) {
     scanf("%i",&numeroEstudiante);
     printf( "Numero de esrudiantes : %d\n", numeroEstudiante);
 
-    while ((getchar()) != '\n' ) { }
+    limpia();
 
     struct Estudiante estudianteArreglo[numeroEstudiante];
 
@@ -30,7 +35,7 @@ int main( ) {
         fgets(estudianteArreglo[j].nombre, 50, stdin);
         printf("Ingresa la edad del estudiante\n");
         scanf("%i",&estudianteArreglo[j].edad);
-        while ((getchar()) != '\n' ) { }
+        limpia();
         printf("Ingresa el genero del estudiante\n");
         fgets(estudianteArreglo[j].genero, 50, stdin);
     }
